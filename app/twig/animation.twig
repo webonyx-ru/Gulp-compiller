@@ -1,0 +1,17 @@
+{% extends "layouts/app.twig" %}
+
+{% block pageTitle %}Главная страница{% endblock %}
+
+<style>
+    .hello {
+        border: 2px solid #ffaaaa;
+    }
+</style>
+
+{% block content %}
+    {% for i in 1..20 %}
+        <div style="height:400px; position: relative;">
+            <div class="logo" data-delay="300" data-qube-animation data-posx="-500" data-posy="500"><i class="fri fri-qube-logo"></i></div>
+        </div>
+    {% endfor %}
+{% endblock %}

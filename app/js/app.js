@@ -1,9 +1,9 @@
-(function() {
+var YOURAPPNAME = (function() {
 
-    function YOURAPPNAME(doc) {
+    function YOURAPPNAME() {
         var _self = this;
 
-        _self.doc = doc;
+        _self.doc = document;
         _self.window = window;
 
         _self.bootstrap();
@@ -206,25 +206,33 @@
         return plugin;
     };
 
-    var app = new YOURAPPNAME(document);
-
-    app.appLoad('loading', function () {
-        console.log('App is loading... Paste your app code here.');
-        // App is loading... Paste your app code here. 4example u can run preloader event here and stop it in action appLoad dom or full
-    });
-
-    app.appLoad('dom', function () {
-        console.log('DOM is loaded! Paste your app code here (Pure JS code).');
-        // DOM is loaded! Paste your app code here (Pure JS code).
-        // Do not use jQuery here cause external libs do not loads here...
-
-        app.initSwitcher(); // data-switcher="{target='anything'}" , data-switcher-target="anything"
-    });
-
-    app.appLoad('full', function (e) {
-        console.log('App was fully load! Paste external app source code here... For example if your use jQuery and something else');
-        // App was fully load! Paste external app source code here... 4example if your use jQuery and something else
-        // Please do not use jQuery ready state function to avoid mass calling document event trigger!
-    });
-
+    return YOURAPPNAME;
 })();
+
+
+
+var app = new YOURAPPNAME();
+
+app.appLoad('loading', function () {
+    console.log('App is loading... Paste your app code here.');
+    // App is loading... Paste your app code here. 4example u can run preloader event here and stop it in action appLoad dom or full
+});
+
+app.appLoad('dom', function () {
+    console.log('DOM is loaded! Paste your app code here (Pure JS code).');
+    // DOM is loaded! Paste your app code here (Pure JS code).
+    // Do not use jQuery here cause external libs do not loads here...
+
+    app.initSwitcher(); // data-switcher="{target='anything'}" , data-switcher-target="anything"
+});
+
+app.appLoad('full', function (e) {
+    console.log('App was fully load! Paste external app source code here... For example if your use jQuery and something else');
+    // App was fully load! Paste external app source code here... 4example if your use jQuery and something else
+    // Please do not use jQuery ready state function to avoid mass calling document event trigger!
+});
+
+
+function trim(text) {
+    return (text || "").replace(/^\s+|\s+$/g, "");
+};

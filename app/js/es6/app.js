@@ -52,9 +52,9 @@
     YOURAPPNAME.prototype.scrollBarWidth = function() {
         var _self = this,
             outer = _self.doc.createElement("div");
-            outer.style.visibility = "hidden";
-            outer.style.width = "100px";
-            outer.style.msOverflowStyle = "scrollbar";
+        outer.style.visibility = "hidden";
+        outer.style.width = "100px";
+        outer.style.msOverflowStyle = "scrollbar";
 
         _self.body.appendChild(outer);
 
@@ -89,7 +89,8 @@
                 for(var y=0; y<switcherElems.length; y++) {
                     var switcherElem = switcherElems[y],
                         parentNode = switcher.children,
-                        switcherTarget = switcherTargets[y];
+                        switcherTarget = switcherTargets[y],
+                        switcherNotActiveList = [];
 
                     if(switcherElem.classList.contains('active')) {
                         for(var z=0; z<parentNode.length; z++) {
@@ -98,7 +99,7 @@
                         }
                         switcherElem.classList.add('active');
                         switcherTarget.classList.add('active');
-                    }
+                    } else switcherNotActiveList.push(y);
 
                     switcherElem.children[0].addEventListener('click', function (elem, target, parent, targets) {
                         return function (e) {
@@ -114,6 +115,11 @@
                         };
 
                     }(switcherElem, switcherTarget, parentNode, switcherTargets));
+                }
+
+                if(switcherNotActiveList.length === switcherElems.length) {
+                    switcherElems[0].classList.add('active');
+                    switcherTargets[0].classList.add('active');
                 }
             }
         }
@@ -252,7 +258,7 @@
         // DOM is loaded! Paste your app code here (Pure JS code).
         // Do not use jQuery here cause external libs do not loads here...
 
-        app.initSwitcher(); // data-switcher="{target='anything'}" , data-switcher-target="anything"
+        app.initSwitcher(); // data-switcher="{target: 'anything'}" , data-switcher-target="anything"
     });
 
     app.appLoad('full', function (e) {

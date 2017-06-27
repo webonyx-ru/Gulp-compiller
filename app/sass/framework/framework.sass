@@ -11,37 +11,62 @@
 @import "visibilities"
 @import "text"
 
-.fw-overflow-hidden
-  overflow: hidden
-
-.fw-img-cover
-  width: 100%
-  height: 100%
-  object-fit: cover
-
-@each $value in '1-2', '1-5', '1-7', '2'
-  .fw-line-height-#{$value}
-    line-height: unquote(str_replace($value, '-', '.'))
-
 .fw-inline-block
   display: inline-block
+
+.fw-inline-block\@xs
+  @media screen and (min-width: $extraSmall)
+   display: inline-block
+
+.fw-inline-block\@s
+  @media screen and (min-width: $small)
+   display: inline-block
+
+.fw-inline-block\@m
+  @media screen and (min-width: $medium)
+   display: inline-block
+
+.fw-inline-block\@l
+  @media screen and (min-width: $large)
+   display: inline-block
 
 .fw-block
   display: block
 
+.fw-block\@xs
+  @media screen and (min-width: $extraSmall)
+    display: block
+
+.fw-block\@s
+  @media screen and (min-width: $small)
+    display: block
+
+.fw-block\@m
+  @media screen and (min-width: $medium)
+    display: block
+
+.fw-block\@l
+  @media screen and (min-width: $large)
+    display: block
+
 .fw-inline
   display: inline
 
-.fw-check-mark
-  position: relative
-  display: flex
+.fw-inline\@xs
+  @media screen and (min-width: $extraSmall)
+    display: inline
 
-  &::before
-    content: url("../images/icons/icon.check.mark.png")
-    display: block
-    margin-top: 2px
-    margin-right: 5px
-    flex-shrink: 0
+.fw-inline\@s
+  @media screen and (min-width: $small)
+    display: inline
+
+.fw-inline\@m
+  @media screen and (min-width: $medium)
+    display: inline
+
+.fw-inline\@l
+  @media screen and (min-width: $large)
+    display: inline
 
 @each $value in 100
   .fw-box-proportional-#{$value}

@@ -18,6 +18,10 @@
     @media screen and (min-width: $large)
       font-size: #{$value}px
 
+@each $value in '1-2', '1-5', '1-7', '2'
+  .fw-line-height-#{$value}
+    line-height: unquote(str_replace($value, '-', '.'))
+
 .fw-font-merriweather
   font-family: 'Merriweather', sans-serif
 

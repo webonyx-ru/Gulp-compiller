@@ -1,4 +1,3 @@
-
 .fw-clearfix
   &::after
     display: block
@@ -46,25 +45,30 @@
       text-decoration: $value
 
   .fw-text-#{$value}-hover
+    text-decoration: none
     &:hover
       text-decoration: $value
 
   .fw-text-#{$value}-hover\@xs
+    text-decoration: none
     @media screen and (min-width: $extraSmall)
       &:hover
         text-decoration: $value
 
   .fw-text-#{$value}-hover\@s
+    text-decoration: none
     @media screen and (min-width: $small)
       &:hover
         text-decoration: $value
 
   .fw-text-#{$value}-hover\@m
+    text-decoration: none
     @media screen and (min-width: $medium)
       &:hover
         text-decoration: $value
 
   .fw-text-#{$value}-hover\@l
+    text-decoration: none
     @media screen and (min-width: $large)
       &:hover
         text-decoration: $value

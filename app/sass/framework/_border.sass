@@ -1,4 +1,4 @@
-@each $value in 1, 2, 3, 4
+@each $value in 1, 2, 3, 4, 5
   .fw-border-width-#{$value}
     border-width: #{$value}px
 
@@ -9,8 +9,7 @@
   .fw-border-radius-percent-#{$value}
     border-radius: unquote("#{$value}%")
 
-
-@each $value in white_#{$colorWhite}, yellow_#{$colorYellow}, black_#{$colorBlack}, cyan_#{$colorCyan}, blue-light_#{$colorBlueLight}, grey-dark_#{$colorGreyDark}, pink_#{$colorPink}
+@each $value in white_#{$colorWhite}, black_#{$colorBlack}
   $values: str_split($value, '_')
   $color: nth($values, 2)
   $colorName: nth($values, 1)

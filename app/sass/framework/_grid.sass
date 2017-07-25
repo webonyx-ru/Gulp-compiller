@@ -5,6 +5,9 @@
 .fw-grid-middle
   align-items: center
 
+.fw-grid-center
+  justify-content: center
+
 .fw-grid-bottom
   align-items: center
 
@@ -17,6 +20,8 @@
       box-sizing: border-box
       padding-left: #{$value}px
       margin-bottom: #{$value}px
+      display: flex
+      flex-direction: column
 
   .fw-grid-#{$value}\@xs
     @media screen and (min-width: $extraSmall)

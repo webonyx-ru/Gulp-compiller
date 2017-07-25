@@ -19,10 +19,6 @@
   height: 100%
   object-fit: cover
 
-@each $value in '1-2', '1-5', '1-7', '2'
-  .fw-line-height-#{$value}
-    line-height: unquote(str_replace($value, '-', '.'))
-
 .fw-inline-block
   display: inline-block
 
